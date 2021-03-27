@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 2</title>
+<!--    <script src="./script1.js" async></script>-->
+
+</head>
+<body>
+<script>
+
+    // Задача №1 Почему код даёт именно такие результаты?
+
+    var a = 1, b = 1, c, d;
+    c = ++a; alert(c);           // 2 (Переменная инкримет)
+    d = b++; alert(d);           // 1 (Вернули значение, а потом инкремент, следующий вызов "b" будет 2
+    c = (2+ ++a); alert(c);      // 5 (Значанеи "а" было уже 2, потом инкремент 'a' стало 3 и еще плюс 2)
+    d = (2+ b++); alert(d);      // 4 ("b" было 2, плюс 2. Следующий вызов "b" будет 3)
+    alert(a);                    // 3 (2 раза префиксный инкркмент)
+    alert(b);                    // 3 (2 раза постфиксный инкремент)
+
+
+
+    // Задача №2 ему будет равен x в примере ниже?
+
+var p = 2;
+var x = 1 + (p *= 2);   // Ответ - 5 исходное значение переменной умножить на 2 и плюс 1
+
+
+
+    /*Задача №3 Объявить две целочисленные переменные a и b и задать им произвольные начальные значения.
+    Затем написать скрипт, который работает по следующему принципу:
+        если a и b положительные, вывести их разность;
+        если а и b отрицательные, вывести их произведение;
+        если а и b разных знаков, вывести их сумму; ноль можно считать положительным числом.
+    */
+
+let first = +prompt("Введи первое число: ")
+let second = +prompt("Введи второе число: ")
+
+if (first >= 0 && b >= 0) console.log(first - second);
+if (first < 0 && second < 0) console.log(first * second);
+if ((first < 0 && second >= 0) || (first >= 0 && second < 0)) console.log(first + second);
+
+
+
+    /*Задача №4 Присвоить переменной а значение в промежутке [0..15].
+    С помощью оператора switch организовать вывод чисел от a до 15.*/
+
+let switchNumber = prompt("Введи число от 0 до 15: ")
+
+switch (switchNumber) {
+    case "0":
+        console.log("0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15");
+        break;
+    case "1":
+        console.log("1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15");
+        break;
+    case "2":
+        console.log("2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15");
+        break;
+    case "3":
+        console.log("3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15");
+        break;
+    case "4":
+        console.log("4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15");
+        break;
+    case "5":
+        console.log("5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15");
+        break;
+    case "6":
+        console.log("6, 7, 8, 9, 10, 11, 12, 13, 14, 15");
+        break;
+    case "7":
+        console.log("7, 8, 9, 10, 11, 12, 13, 14, 15");
+        break;
+    case "8":
+        console.log("8, 9, 10, 11, 12, 13, 14, 15");
+        break;
+    case "9":
+        console.log("9, 10, 11, 12, 13, 14, 15");
+        break;
+    case "10":
+        console.log("10, 11, 12, 13, 14, 15");
+        break;
+    case "11":
+        console.log("11, 12, 13, 14, 15");
+        break;
+    case "12":
+        console.log("12, 13, 14, 15");
+        break;
+    case "13":
+        console.log("13, 14, 15");
+        break;
+    case "14":
+        console.log("14, 15");
+        break;
+    case "15":
+        console.log("15");
+        break;
+    default:
+        console.log('Просили же число от 0 до 15');
+}
+
+
+
+    /*Задача №5 Реализовать основные 4 арифметические операции в виде функций с двумя параметрами.
+    Обязательно использовать оператор return.*/
+
+ function saySum(a, b) {
+    return a + b;
+    }
+
+ function sayMinus(a, b) {
+    return a - b;
+    }
+
+ function sayMultiplication(a, b) {
+    return a * b;
+    }
+
+ function sayDivision(a, b) {
+    return a / b;
+    }
+
+a = +prompt("Введи первое число: ")
+b = +prompt("Введи второе число: ")
+
+console.log(saySum(a, b));
+console.log(sayMinus(a, b));
+console.log(sayMultiplication(a, b));
+console.log(sayDivision(a, b));
+
+
+
+    /*Задача №6 Реализовать функцию с тремя параметрами: f unction mathOperation(arg1, arg2, operation),
+    где arg1, arg2 — значения аргументов, operation — строка с названием операции. В
+    зависимости от переданного значения выполнить одну из арифметических операций
+    (использовать функции из пункта 5) и вернуть полученное значение (применить switch ).*/
+
+function mathOperation(arg1, arg2, operation){
+        switch (operation) {
+        case "+":
+            return saySum(arg1, arg2);
+            break;
+        case "-":
+            return sayMinus(arg1, arg2);;
+            break;
+        case "*":
+            return sayMultiplication(arg1, arg2);;
+            break;
+        case "/":
+            return sayDivision(arg1, arg2);;
+            break;
+         }
+    }
+
+a = +prompt("Введи первое число: ");
+b = +prompt("Введи второе число: ");
+let symbolOperation  = prompt("Введи символ операции: ");
+
+console.log(mathOperation(a, b, symbolOperation));
+
+
+
+    /*Задача №7 Сравнить null и 0. Попробуйте объяснить результат.*/
+
+console.log(null == 0);   // false
+console.log(null === 0); // false т.к. null это не определенное пока значение, а "0" это уже определенное
+
+
+
+    /*Задача №8 С помощью рекурсии организовать функцию возведения числа в степень. Формат: function
+    power(val, pow), где val — заданное число, pow –— степень. */
+
+function power(var1, pow1){
+    if (pow1 == 0) return 1;
+    else if (pow1 > 0) return power(var1, (pow1 -1)) * var1;
+    else return (power(var1, pow1 + 1)) / var1;
+}
+
+console.log(power(3, -1))
+
+
+
+</script>
+
+
+</body>
+</html>
