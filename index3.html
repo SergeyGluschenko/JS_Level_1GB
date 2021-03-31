@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 2</title>
+<!--    <script src="./script1.js" async></script>-->
+
+</head>
+<body>
+<script>
+
+    // Задача №1 С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+
+    var arr = [];
+    var count = +prompt("Введи до какого числа ищем простые: ")
+    var i = 1;
+    while (i <= count) {
+        var n = 1;
+        var frequency = 0
+        while (n <= i) {
+            if (i % n === 0){
+                frequency += 1;
+                }
+            if (frequency > 2){
+                break;
+                }
+                ++n
+        }
+        if (frequency === 2){arr.push(i)}
+        ++i
+    }
+    console.log(arr)
+
+
+
+    // Задача №2. С этого урока начинаем работать с функционалом интернет-магазина.
+    // Предположим, есть сущность корзины. Нужно реализовать функционал подсчета стоимости корзины
+    // в зависимости от находящихся в ней товаров. Товары в корзине хранятся в массиве.
+    // Задачи:
+    // a) Организовать такой массив для хранения товаров в корзине;
+    // b) Организовать функцию countBasketPrice, которая будет считать стоимость корзины.
+
+    function countBasketPrice(arrey){
+        var result = arrey.reduce(function(sum, current) {
+            var currentNum = current[1] * current[2]
+            return sum + currentNum;}, 0);
+        console.log(arrey)
+        return result
+    }
+
+
+    let array = [['яблоки', 1.5, 110], ['груши', 4, 150], ['молоко', 1, 70]];
+
+    console.log(countBasketPrice(array));
+
+
+
+    /*Задача №3  Вывести с помощью цикла for числа от 0 до 9, не используя тело цикла.
+    Выглядеть это должно так: */
+
+    for (var k = 1; k <= 9; console.log(k++))
+    {
+
+
+    }
+
+
+
+    /*Задача №4 Нарисовать пирамиду с 20 рядами с помощью console.log.*/
+
+    let cou = +prompt("Кол-во строк: ")
+    let tempo = "";
+    for (let i = 1; i <= cou; i++)
+        console.log(tempo += "*");
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
